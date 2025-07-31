@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+{% if messages %}
+  <div class="error">
+    {% for message in messages %}
+      <p style="color:red;">{{ message }}</p>
+    {% endfor %}
+  </div>
+{% endif %}
+<h2>Input New Data</h2>
+<form action="submit" method="post" enctype="multipart/form-data">
+	Description: <input name="description" type="text"/><br>
+    GPS coord: <input name="gps" type="text" placeholder="latitude, longitude"/><br>
+	Image: <input name="image" type="file"/><br>
+	<input type="submit"/>
+</form>
+
+{% if submissions %}
+<h2>Previous Submissions</h2>
+<table border="1">
+    <tr>
+        <th>Image</th>
+        <th>GPS</th>
+        <th>Category</th>
+        <th>Country</th>
+    </tr>
+    {% for row in submissions %}
+    <tr>
+		<td><img src="{{ url_for('static', filename=row.filepath) }}" width="200"></td>
+        <td>{{ row.gps }}</td>
+        <td>{{ row.category }}</td>
+        <td>{{ row.country }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+
+{% endblock content %}
