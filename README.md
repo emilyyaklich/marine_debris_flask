@@ -1,7 +1,7 @@
 # Marine Debris Flask App
 ## Devleloped as part of a final project for INFO8000 at the University of Georgia
 
-This flask app will accept submission of a marine debris image, GPS coordinates, and brief description and will query gemini to classify the marine debris into a category (based on the [MDMAP Guide](https://marinedebris.noaa.gov/protocol/mdmap-marine-debris-item-categorization-guide), add the submission to a SQL database, and project this database onto the app itself.
+This flask app will accept submission of a marine debris image, GPS coordinates, and brief description and will query gemini to classify the marine debris into a category (based on the [MDMAP Guide](https://marinedebris.noaa.gov/protocol/mdmap-marine-debris-item-categorization-guide)), add the submission to a SQL database, and project this database onto the app itself.
 
 - `marine-debris-flask.py` contains the flask app
 - `templates/` directory contains:
